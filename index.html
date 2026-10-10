@@ -5,9 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Coursera - Cursos en Línea</title>
   <style>
-    /* --------------------------------------------------
-       1. ESTILOS GENERALES Y FUENTES
-       -------------------------------------------------- */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -23,9 +20,6 @@
       min-height: 100vh;
     }
 
-    /* --------------------------------------------------
-       2. ENCABEZADO (HEADER) Y NAVEGACIÓN
-       -------------------------------------------------- */
     header {
       background-color: #e6f0fa; /* Azul suave claro */
       border-bottom: 2px solid #d0e1f9;
@@ -42,7 +36,7 @@
     .logo {
       font-size: 28px;
       font-weight: bold;
-      color: #0056d2; /* Azul característico de Coursera */
+      color: #0056d2; 
       text-decoration: none;
     }
 
@@ -96,15 +90,11 @@
       background-color: #003e99;
     }
 
-    /* --------------------------------------------------
-       3. CUERPO PRINCIPAL (MAIN CONTENT)
-       -------------------------------------------------- */
     main {
       flex: 1;
       padding-bottom: 40px;
     }
 
-    /* Sección Hero (Banner principal) */
     .hero {
       background: linear-gradient(rgba(0, 86, 210, 0.05), rgba(0, 86, 210, 0.05)),
                   url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
@@ -194,9 +184,6 @@
       flex: 1;
     }
 
-    /* --------------------------------------------------
-       4. MODALES / FORMULARIOS FLOTANTES
-       -------------------------------------------------- */
     .modal-overlay {
       position: fixed;
       top: 0;
@@ -279,9 +266,6 @@
       background-color: #003e99;
     }
 
-    /* --------------------------------------------------
-       5. PIE DE PÁGINA (FOOTER)
-       -------------------------------------------------- */
     footer {
       background-color: #0f172a; /* Tonalidad oscura de azul */
       color: #f1f5f9;
@@ -312,7 +296,6 @@
 </head>
 <body>
 
-  <!-- ==================== ENCABEZADO ==================== -->
   <header>
     <a href="#" class="logo">coursera</a>
 
@@ -325,28 +308,23 @@
       </ul>
     </nav>
 
-    <!-- Botones de Acción -->
     <div class="auth-buttons">
       <button class="btn btn-login" onclick="openModal('loginModal')">Iniciar sesión</button>
       <button class="btn btn-register" onclick="openModal('registerModal')">Unirte</button>
     </div>
   </header>
 
-  <!-- ==================== CUERPO PRINCIPAL ==================== -->
   <main>
-    <!-- Banner Superior (Hero) -->
     <section class="hero">
       <h1>Aprende sin límites</h1>
       <p>Comienza, cambia o haz avanzar tu carrera con más de 5,000 cursos, certificados profesionales y títulos.</p>
       <button class="btn btn-register" onclick="openModal('registerModal')">Unirte gratis</button>
     </section>
 
-    <!-- Sección de Cursos -->
     <section class="courses-section" id="cursos">
       <h2>Cursos Destacados</h2>
       <div class="courses-grid">
         
-        <!-- Curso 1 -->
         <article class="course-card">
           <img src="https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?auto=format&fit=crop&w=600&q=80" alt="JavaScript">
           <div class="course-content">
@@ -355,7 +333,6 @@
           </div>
         </article>
 
-        <!-- Curso 2 -->
         <article class="course-card">
           <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=600&q=80" alt="Diseño Web HTML y CSS">
           <div class="course-content">
@@ -364,7 +341,6 @@
           </div>
         </article>
 
-        <!-- Curso 3 -->
         <article class="course-card">
           <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80" alt="Python para Principiantes">
           <div class="course-content">
@@ -377,9 +353,6 @@
     </section>
   </main>
 
-  <!-- ==================== MODALES / FORMULARIOS ==================== -->
-  
-  <!-- Formulario de Iniciar Sesión -->
   <div class="modal-overlay" id="loginModal">
     <div class="modal">
       <span class="close-btn" onclick="closeModal('loginModal')">&times;</span>
@@ -398,7 +371,6 @@
     </div>
   </div>
 
-  <!-- Formulario de Registro (Unirse) -->
   <div class="modal-overlay" id="registerModal">
     <div class="modal">
       <span class="close-btn" onclick="closeModal('registerModal')">&times;</span>
@@ -435,7 +407,6 @@
     </div>
   </div>
 
-  <!-- ==================== PIE DE PÁGINA ==================== -->
   <footer>
     <div class="footer-content">
       <h4>Información de la Estudiante</h4>
@@ -449,27 +420,26 @@
     </div>
   </footer>
 
-  <!-- ==================== JAVASCRIPT ==================== -->
   <script>
-    // Función para abrir modales
+    
     function openModal(modalId) {
       document.getElementById(modalId).style.display = 'flex';
     }
 
-    // Función para cerrar modales
+
     function closeModal(modalId) {
       document.getElementById(modalId).style.display = 'none';
     }
 
-    // Manejo de Inicio de Sesión
+
     function handleLogin(event) {
-      event.preventDefault(); // Evita que la página se recargue
+      event.preventDefault(); 
       alert("¡Has iniciado sesión con éxito!");
       closeModal('loginModal');
-      event.target.reset(); // Limpia los campos
+      event.target.reset(); 
     }
 
-    // Manejo de Registro
+    
     function handleRegister(event) {
       event.preventDefault();
       alert("¡Te has registrado correctamente!");
@@ -477,7 +447,6 @@
       event.target.reset();
     }
 
-    // Cerrar modal al hacer clic fuera de la caja
     window.onclick = function(event) {
       if (event.target.classList.contains('modal-overlay')) {
         event.target.style.display = 'none';
